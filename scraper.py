@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 from selenium import webdriver
-import time
 
 
 def extract_product_links_from_sections(sections_urls):
@@ -25,6 +24,7 @@ def extract_christmas_gifts_urls(driver):
     links_to_subcategories = driver.find_elements_by_xpath("//div[@id=\"dropdownChristmas\"]//ul/li/a")
     return [(link.get_attribute('innerHTML'), link.get_attribute("href"))
             for link in links_to_subcategories if "gift vouchers" not in link.get_attribute('innerHTML').lower()]
+
 
 def scraper_process():
     driver = webdriver.Chrome(executable_path="./chromedriver")
