@@ -90,4 +90,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+/debug.log
 chromedriver.exe
